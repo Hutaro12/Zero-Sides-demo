@@ -21,7 +21,7 @@ class MainMenuState extends MusicBeatState
 	var menuBackground:FlxSprite;
 	var background:FlxSprite;
 	var velocityBackground:FlxBackdrop;
-	//var sbEngineLogo:FlxSprite;
+	var sbEngineLogo:FlxSprite;
 	var mainSide:FlxSprite;
 	var versionSb:FlxText;
 	var versionPsych:FlxText;
@@ -31,7 +31,7 @@ class MainMenuState extends MusicBeatState
 	var optionSelect:Array<String> = [
 		'story_mode',
 		'freeplay',
-		//#if MODS_ALLOWED 'mods', #end
+		#if MODS_ALLOWED 'mods', #end
 		'credits',
 		'options'
 	];
