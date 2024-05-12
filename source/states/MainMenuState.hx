@@ -137,7 +137,7 @@ class MainMenuState extends MusicBeatState
 			menuItem.antialiasing = ClientPrefs.data.antialiasing;
 			menuItem.updateHitbox();
             if (firstStart)
-				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
+				FlxTween.tween(menuItem, {x: -50}, 1 + (i * 0.25), {
 					ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
 					{
