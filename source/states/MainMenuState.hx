@@ -112,6 +112,19 @@ class MainMenuState extends MusicBeatState
 		mainSide.x = -500;
 		mainSide.y = -90;
 		add(mainSide);
+		
+		sbEngineLogo = new FlxSprite(0).loadGraphic(Paths.image('sbEngineLogo'));
+		sbEngineLogo.scrollFactor.x = 0;
+		sbEngineLogo.scrollFactor.y = 0;
+		sbEngineLogo.antialiasing = ClientPrefs.data.antialiasing;
+		sbEngineLogo.setGraphicSize(Std.int(menuBackground.width * 0.32));
+		sbEngineLogo.updateHitbox();
+		sbEngineLogo.screenCenter();
+		sbEngineLogo.x = 1000;
+		sbEngineLogo.y = 90;
+		sbEngineLogo.scale.x = 1;
+		sbEngineLogo.scale.y = 1;
+		add(sbEngineLogo);
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
