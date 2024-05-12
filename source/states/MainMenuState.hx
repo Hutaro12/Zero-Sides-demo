@@ -21,7 +21,7 @@ class MainMenuState extends MusicBeatState
 	var menuBackground:FlxSprite;
 	var background:FlxSprite;
 	var velocityBackground:FlxBackdrop;
-	var sbEngineLogo:FlxSprite;
+	//var sbEngineLogo:FlxSprite;
 	var mainSide:FlxSprite;
 	var versionSb:FlxText;
 	var versionPsych:FlxText;
@@ -31,7 +31,7 @@ class MainMenuState extends MusicBeatState
 	var optionSelect:Array<String> = [
 		'story_mode',
 		'freeplay',
-		#if MODS_ALLOWED 'mods', #end
+		//#if MODS_ALLOWED 'mods', #end
 		'credits',
 		'options'
 	];
@@ -113,19 +113,6 @@ class MainMenuState extends MusicBeatState
 		mainSide.y = -90;
 		add(mainSide);
 
-		sbEngineLogo = new FlxSprite(0).loadGraphic(Paths.image('sbEngineLogo'));
-		sbEngineLogo.scrollFactor.x = 0;
-		sbEngineLogo.scrollFactor.y = 0;
-		sbEngineLogo.antialiasing = ClientPrefs.data.antialiasing;
-		sbEngineLogo.setGraphicSize(Std.int(menuBackground.width * 0.32));
-		sbEngineLogo.updateHitbox();
-		sbEngineLogo.screenCenter();
-		sbEngineLogo.x = 1000;
-		sbEngineLogo.y = 90;
-		sbEngineLogo.scale.x = 1;
-		sbEngineLogo.scale.y = 1;
-		add(sbEngineLogo);
-
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
 
@@ -163,7 +150,7 @@ class MainMenuState extends MusicBeatState
 		}
         firstStart = false;
 
-		FlxG.camera.follow(camFollow, null, 0);
+		//FlxG.camera.follow(camFollow, null, 0);
 
 		FlxTween.tween(mainSide, {x: -80}, 0.9, {ease: FlxEase.quartInOut});
 		FlxTween.tween(sbEngineLogo, {x: 725}, 0.9, {ease: FlxEase.quartInOut});
