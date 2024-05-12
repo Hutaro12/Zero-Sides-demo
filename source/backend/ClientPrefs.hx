@@ -72,7 +72,7 @@ class SaveVariables {
 	public var judgementCounter:Bool = true;
 	public var judgementCounterStyle:String = 'Original';
 	public var judgementZoom:Bool = true;
-	public var watermark:Bool = true;
+	public var watermark:Bool = false;
 	public var watermarkStyle:String = 'SB Engine';
 	public var randomEngineNames:Bool = false;
 	public var objects:Bool = true;
@@ -97,14 +97,14 @@ class SaveVariables {
 	public var ratingComboPopup:Bool = true;
 	public var ratingComboNumberPopup:Bool = true;
 	public var mainMenuMusic:String = 'SB Engine';
-	public var resultsScreen:Bool = false;
-	public var loadingScreen:Bool = false;
+	public var resultsScreen:Bool = true;
+	public var loadingScreen:Bool = true;
 	public var gameOverScreen:Bool = true;
 	public var songPercentage:Bool = false;
 	public var fadeTransition:Bool = true;
 	public var timeTxt:Bool = true;
 	public var accuraryStyle:String = 'Judgement';
-	public var zeroPercentHealth:Bool = false;
+	public var zeroPercentHealth:Bool = true;
 	public var leftToRightBar:Bool = true;
 	public var betterCutscene:Bool = true;
 	public var gameplaySettings:Map<String, Dynamic> = [
