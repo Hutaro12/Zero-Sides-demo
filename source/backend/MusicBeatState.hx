@@ -217,6 +217,18 @@ class MusicBeatState extends FlxUIState
 		curStep = lastChange.stepTime + Math.floor(shit);
 	}
 
+	public function stepHit():Void
+	{
+		stagesFunc(function(stage:BaseStage) {
+			stage.curStep = curStep;
+			stage.curDecStep = curDecStep;
+			stage.stepHit();
+		});
+
+		if (curStep % 4 == 0)
+			beatHit();
+	}
+
 	override function startOutro(onOutroComplete:()-> Void):Void
 	{
 		if (!FlxTransitionableState.skipNextTransIn || !ClientPrefs.data.fadeTransition)
@@ -238,28 +250,9 @@ class MusicBeatState extends FlxUIState
 		return cast (FlxG.state, MusicBeatState);
 	}
 
-	public function stepHit():Void
-	{
-		stagesFunc(function(stage:BaseStage) {
-			stage.curStep = curStep;
-			stage.curDecStep = curDecStep;
-			stage.stepHit();
-		});
-		if (curStep % 4 == 0)
-			beatHit();
-	}
 	public var stages:Array<BaseStage> = [];
 	public function beatHit():Void
 	{
-		//TraceText.makeTheTraceText('Beat: ' + curBeat);
-		stagesFunc(function(stage:BaseStage) {
-			stage.curBeat = curBeat;
-			stage.curDecBeat = curDecBeat;
-			stage.beatHit();
-		});
-	}
-	public function sectionHit():Void
-	{{
 		//TraceText.makeTheTraceText('Beat: ' + curBeat);
 		stagesFunc(function(stage:BaseStage) {
 			stage.curBeat = curBeat;
