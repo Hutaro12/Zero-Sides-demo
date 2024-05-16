@@ -421,7 +421,7 @@ class NoteOffsetState extends MusicBeatState
 			if(beatTween != null) beatTween.cancel();
 
 			persistentUpdate = false;
-			MusicBeatState.switchState(new options.OptionsState());
+			FlxG.switchState(() -> new options.OptionsState());
 
 			if(OptionsState.onPlayState)
 			{
