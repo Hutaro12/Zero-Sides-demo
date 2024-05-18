@@ -2642,7 +2642,10 @@ class PlayState extends MusicBeatState
 			{
 				if(!cpuControlled) {
 					keysCheck();
-				} else {
+				} else if (boyfriend.animation.curAnim != null
+					&& boyfriend.holdTimer > Conductor.stepCrochet * (0.0011 / FlxG.sound.music.pitch) * boyfriend.singDuration
+						&& boyfriend.animation.curAnim.name.startsWith('sing')
+						&& !boyfriend.animation.curAnim.name.endsWith('miss')) {
 					playerDance();
 					//boyfriend.animation.curAnim.finish();
 				}
