@@ -437,7 +437,7 @@ class MainMenuState extends MusicBeatState
 		if(clickCount > 5)
 			clickCount = 0;
 			
-		/switch(clickCount)
+		switch(clickCount)
 		{
 			case 0:
 				colorTag = FlxColor.BROWN;
