@@ -29,11 +29,11 @@ class MainMenuState extends MusicBeatState
 	var secretText1:FlxText;
 	
 	var optionSelect:Array<String> = [
-		'story_mode',
-		'freeplay',
-		#if MODS_ALLOWED 'mods', #end
-		'credits',
-		'options'
+		'story_mode', // 0
+		'freeplay', // 1
+		//#if MODS_ALLOWED 'mods', #end
+		'credits', // 2
+		'options' // 3
 	];
 
 	var camFollow:FlxObject;
@@ -149,6 +149,31 @@ class MainMenuState extends MusicBeatState
 			if(optionSelect.length < 6) scr = 0;
 			menuItem.antialiasing = ClientPrefs.data.antialiasing;
 			menuItem.updateHitbox();
+
+			
+                        switch (i)
+			{
+			    case 0:
+				menuItem.y = 2;
+				menuItem.x = 1;
+
+			    case 1:
+				menuItem.y = 2;
+				menuItem.x = 1;
+
+			    case 2:
+				menuItem.y = 2;
+				menuItem.x = 1;
+
+			    case 3:
+				menuItem.y = 2;
+				menuItem.x = 1;
+
+				
+			}
+
+
+			
             if (firstStart)
 				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
 					ease: FlxEase.expoInOut,
@@ -318,7 +343,7 @@ class MainMenuState extends MusicBeatState
 
 		if(curBeat % 4 == 2)
 		{
-			FlxG.camera.zoom = 1.15;
+			FlxG.camera.zoom = 1.02;
 
 			if(zoomTween != null) zoomTween.cancel();
 			if (ClientPrefs.data.camZooms) {
@@ -430,30 +455,5 @@ class MainMenuState extends MusicBeatState
 				});
 			}
 		});
-	}
-	
-	function backgroundColorClickChanger()
-	{
-		if(clickCount > 5)
-			clickCount = 0;
-			
-		switch(clickCount)
-		{
-			case 0:
-				colorTag = FlxColor.BROWN;
-			case 1:
-				colorTag = FlxColor.ORANGE;
-			case 2:
-				colorTag = FlxColor.GREEN;
-			case 3:
-				colorTag = FlxColor.BLUE;
-			case 4:
-				colorTag = FlxColor.BROWN;
-			case 5:
-				colorTag = FlxColor.CYAN;
-		}
-
-		FlxTween.color(menuBackground, 1.3, colorTag, 0xfffde871, {ease: FlxEase.sineInOut});
-		clickCount++;	
 	}
 }
