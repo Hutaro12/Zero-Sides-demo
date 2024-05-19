@@ -31,7 +31,6 @@ class MainMenuState extends MusicBeatState
 	var optionSelect:Array<String> = [
 		'story_mode', // 0
 		'freeplay', // 1
-		//#if MODS_ALLOWED 'mods', #end
 		'credits', // 2
 		'options' // 3
 	];
@@ -434,11 +433,6 @@ class MainMenuState extends MusicBeatState
 					case 'freeplay':
 						FlxG.mouse.visible = false;
 						FlxG.switchState(() -> new FreeplayState());
-					#if MODS_ALLOWED
-					case 'mods':
-						FlxG.mouse.visible = false;
-						FlxG.switchState(() -> new ModsMenuState());
-					#end
 					case 'credits':
 						FlxG.mouse.visible = false;
 						FlxG.switchState(() -> new CreditsState());
