@@ -450,4 +450,29 @@ class MainMenuState extends MusicBeatState
 			}
 		});
 	}
+
+	function backgroundColorClickChanger()
+	{
+		if(clickCount > 5)
+			clickCount = 0;
+			
+		switch(clickCount)
+		{
+			case 0:
+				colorTag = FlxColor.BROWN;
+			case 1:
+				colorTag = FlxColor.ORANGE;
+			case 2:
+				colorTag = FlxColor.GREEN;
+			case 3:
+				colorTag = FlxColor.BLUE;
+			case 4:
+				colorTag = FlxColor.BROWN;
+			case 5:
+				colorTag = FlxColor.CYAN;
+		}
+
+		FlxTween.color(menuBackground, 1.3, colorTag, 0xfffde871, {ease: FlxEase.sineInOut});
+		clickCount++;	
+	}
 }
