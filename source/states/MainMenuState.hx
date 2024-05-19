@@ -174,7 +174,7 @@ class MainMenuState extends MusicBeatState
 
 			
             if (firstStart)
-				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
+				FlxTween.tween(menuItem, {x: -50}, 1 + (i * 0.25), {
 					ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
 					{
@@ -182,8 +182,8 @@ class MainMenuState extends MusicBeatState
 					changeItem();
 				}
 			});
-			else
-			menuItem.x= 50;
+			//else
+			//menuItem.x= 50;
 		}
         firstStart = false;
 
