@@ -153,19 +153,19 @@ class MainMenuState extends MusicBeatState
 			{
 			    case 0:
 				menuItem.y = 2;
-				menuItem.x = 30;
+				menuItem.x = 20;
 
 			    case 1:
-				menuItem.y = -10;
-				menuItem.x = 30;
+				menuItem.y = -18;
+				menuItem.x = 18;
 
 			    case 2:
-				menuItem.y = 5;
-				menuItem.x = 30;
+				menuItem.y = -22;
+				menuItem.x = 16;
 
 			    case 3:
-				menuItem.y = 7;
-				menuItem.x = 30;
+				menuItem.y = -26;
+				menuItem.x = 14;
 
 				
 			}
