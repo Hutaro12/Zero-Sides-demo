@@ -173,12 +173,38 @@ class MainMenuState extends MusicBeatState
 
 			
               if (firstStart)
-				//FlxTween.tween(menuItem, {x: 80}, 1 + (i * 0.25), {
+	      {
+		            case 0:
+				FlxTween.tween(menuItem, {x: 100}, 1 + (i * 0.25), {
 					ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
 					{
 					finishedFunnyMove = true;
 					changeItem();
+
+			    case 1:
+				FlxTween.tween(menuItem, {x: 98}, 1 + (i * 0.25), {
+					ease: FlxEase.expoInOut,
+					onComplete: function(flxTween:FlxTween)
+					{
+					finishedFunnyMove = true;
+					changeItem(); 
+
+			    case 2:
+				FlxTween.tween(menuItem, {x: 96}, 1 + (i * 0.25), {
+					ease: FlxEase.expoInOut,
+					onComplete: function(flxTween:FlxTween)
+					{
+					finishedFunnyMove = true;
+					changeItem();
+
+			    case 3:
+				FlxTween.tween(menuItem, {x: 94}, 1 + (i * 0.25), {
+					ease: FlxEase.expoInOut,
+					onComplete: function(flxTween:FlxTween)
+					{
+					finishedFunnyMove = true;
+					changeItem(); 
 				}
 			});
 			//else
