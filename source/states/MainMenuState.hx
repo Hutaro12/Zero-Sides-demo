@@ -172,9 +172,8 @@ class MainMenuState extends MusicBeatState
 
 
 			
-              if (firstStart)
-	      {
-		            case 0:
+              if (firstStart) 
+		           case 0:
 				FlxTween.tween(menuItem, {x: 100}, 1 + (i * 0.25), {
 					ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
@@ -182,7 +181,7 @@ class MainMenuState extends MusicBeatState
 					finishedFunnyMove = true;
 					changeItem();
 
-			    case 1:
+		           case 1:
 				FlxTween.tween(menuItem, {x: 98}, 1 + (i * 0.25), {
 					ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
@@ -190,7 +189,7 @@ class MainMenuState extends MusicBeatState
 					finishedFunnyMove = true;
 					changeItem(); 
 
-			    case 2:
+			   case 2:
 				FlxTween.tween(menuItem, {x: 96}, 1 + (i * 0.25), {
 					ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
@@ -198,7 +197,7 @@ class MainMenuState extends MusicBeatState
 					finishedFunnyMove = true;
 					changeItem();
 
-			    case 3:
+		           case 3:
 				FlxTween.tween(menuItem, {x: 94}, 1 + (i * 0.25), {
 					ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
