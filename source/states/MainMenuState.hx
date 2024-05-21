@@ -153,34 +153,34 @@ class MainMenuState extends MusicBeatState
 			{
 			    case 0:
 				menuItem.y = 2;
-				menuItem.x = 60;
+				menuItem.x = 80;
 
 			    case 1:
 				menuItem.y = 41;
-				menuItem.x = 69;
+				menuItem.x = 78;
 
 			    case 2:
 				menuItem.y = 40;
-				menuItem.x = 58;
+				menuItem.x = 76;
 
 			    case 3:
 				menuItem.y = 34;
-				menuItem.x = 57;
+				menuItem.x = 74;
 
 				
 			}
 
 
 			
-         //   if (firstStart)
-				//FlxTween.tween(menuItem, {x: -50}, 1 + (i * 0.25), {
-					//ease: FlxEase.expoInOut,
-				//	onComplete: function(flxTween:FlxTween)
-				//	{
-				//	finishedFunnyMove = true;
-				//	changeItem();
-				//}
-		   // });
+              if (firstStart)
+				FlxTween.tween(menuItem, {x: 80}, 1 + (i * 0.25), {
+					ease: FlxEase.expoInOut,
+					onComplete: function(flxTween:FlxTween)
+					{
+					finishedFunnyMove = true;
+					changeItem();
+				}
+			//});
 			//else
 			//menuItem.x= 50;
 		}
