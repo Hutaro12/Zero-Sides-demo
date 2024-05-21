@@ -180,7 +180,7 @@ class MainMenuState extends MusicBeatState
 					finishedFunnyMove = true;
 					changeItem();
 				}
-			//});
+			});
 			//else
 			//menuItem.x= 50;
 		}
