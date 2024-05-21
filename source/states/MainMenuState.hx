@@ -160,7 +160,7 @@ class MainMenuState extends MusicBeatState
 				menuItem.x = 98;
 
 			    case 2:
-				menuItem.y = -40;
+				menuItem.y = -39;
 				menuItem.x = 96;
 
 			    case 3:
@@ -173,9 +173,9 @@ class MainMenuState extends MusicBeatState
 
 			
               if (firstStart)
-				FlxTween.tween(menuItem, {x: 100}, 1 + (i * 0.25), {
-					ease: FlxEase.expoInOut,
-					onComplete: function(flxTween:FlxTween)
+				//FlxTween.tween(menuItem, {x: 100}, 1 + (i * 0.25), {
+					//ease: FlxEase.expoInOut,
+					//onComplete: function(flxTween:FlxTween)
 					{
 					finishedFunnyMove = true;
 					changeItem();
