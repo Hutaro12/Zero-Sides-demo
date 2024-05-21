@@ -135,8 +135,8 @@ class MainMenuState extends MusicBeatState
 			var offset:Float = 108 - (Math.max(optionSelect.length, 4) - 4) * 80;
 			var menuItem:FlxSprite = new FlxSprite(FlxG.width * -1.5, (i * 140)  + offset);
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionSelect[i]);
-			menuItem.animation.addByPrefix('idle', optionSelect[i] + " basic", 12);
-			menuItem.animation.addByPrefix('selected', optionSelect[i] + " white", 12);
+			menuItem.animation.addByPrefix('idle', optionSelect[i] + " basic", 16);
+			menuItem.animation.addByPrefix('selected', optionSelect[i] + " white", 16);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
 			menuItem.scale.x = 0.7;
@@ -172,14 +172,14 @@ class MainMenuState extends MusicBeatState
 
 
 			
-            if (firstStart)
-				FlxTween.tween(menuItem, {x: -50}, 1 + (i * 0.25), {
-					ease: FlxEase.expoInOut,
-					onComplete: function(flxTween:FlxTween)
-					{
-					finishedFunnyMove = true;
-					changeItem();
-				}
+         //   if (firstStart)
+				//FlxTween.tween(menuItem, {x: -50}, 1 + (i * 0.25), {
+					//ease: FlxEase.expoInOut,
+				//	onComplete: function(flxTween:FlxTween)
+				//	{
+				//	finishedFunnyMove = true;
+				//	changeItem();
+				//}
 		   // });
 			//else
 			//menuItem.x= 50;
