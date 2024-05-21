@@ -172,19 +172,19 @@ class MainMenuState extends MusicBeatState
 
 
 			
-              //if (firstStart)
-				//FlxTween.tween(menuItem, {x: 104}, 1 + (i * 0.25), {
-			           	//ease: FlxEase.expoInOut,
-					//onComplete: function(flxTween:FlxTween)
+              if (firstStart)
+				FlxTween.tween(menuItem, {x: 104}, 1 + (i * 0.25), {
+			           	ease: FlxEase.expoInOut,
+					onComplete: function(flxTween:FlxTween)
 					//{
 					//finishedFunnyMove = true;
 					//changeItem();
 		           
-				//}
-	                //});
+				}
+	                });
 			//else
 			//menuItem.x= 50;
-		//}
+		}
         firstStart = false;
 
 		//FlxG.camera.follow(camFollow, null, 0);
