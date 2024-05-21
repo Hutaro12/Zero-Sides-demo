@@ -176,7 +176,7 @@ class MainMenuState extends MusicBeatState
 				FlxTween.tween(menuItem, {x: 104}, 1 + (i * 0.25), {
 			           	ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
-					//{
+					{
 					//finishedFunnyMove = true;
 					//changeItem();
 		           
