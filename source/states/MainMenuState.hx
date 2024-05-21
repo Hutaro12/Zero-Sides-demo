@@ -135,8 +135,8 @@ class MainMenuState extends MusicBeatState
 			var offset:Float = 108 - (Math.max(optionSelect.length, 4) - 4) * 80;
 			var menuItem:FlxSprite = new FlxSprite(FlxG.width * -1.5, (i * 140)  + offset);
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionSelect[i]);
-			menuItem.animation.addByPrefix('idle', optionSelect[i] + " basic", 16);
-			menuItem.animation.addByPrefix('selected', optionSelect[i] + " white", 16);
+			menuItem.animation.addByPrefix('idle', optionSelect[i] + " basic", 12);
+			menuItem.animation.addByPrefix('selected', optionSelect[i] + " white", 12);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
 			menuItem.scale.x = 0.7;
@@ -153,19 +153,19 @@ class MainMenuState extends MusicBeatState
 			{
 			    case 0:
 				menuItem.y = 2;
-				menuItem.x = 80;
+				menuItem.x = 100;
 
 			    case 1:
 				menuItem.y = 41;
-				menuItem.x = 78;
+				menuItem.x = 98;
 
 			    case 2:
-				menuItem.y = 40;
-				menuItem.x = 76;
+				menuItem.y = -40;
+				menuItem.x = 96;
 
 			    case 3:
 				menuItem.y = 34;
-				menuItem.x = 74;
+				menuItem.x = 94;
 
 				
 			}
@@ -173,7 +173,7 @@ class MainMenuState extends MusicBeatState
 
 			
               if (firstStart)
-				FlxTween.tween(menuItem, {x: 80}, 1 + (i * 0.25), {
+				//FlxTween.tween(menuItem, {x: 80}, 1 + (i * 0.25), {
 					ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
 					{
