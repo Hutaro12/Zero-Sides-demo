@@ -166,6 +166,8 @@ class MainMenuState extends MusicBeatState
 			    case 3:
 				FlxTween.tween(menuItem, {x:136}, 2.4, {ease: FlxEase.expoInOut});
 				menuItem.y = 34;
+
+					
 			}
      			
 		}
@@ -411,14 +413,18 @@ class MainMenuState extends MusicBeatState
 					var daChoice:String = optionSelect[currentlySelected];
 
 				switch (daChoice) {
-					        case 'story_mode':
-						MusicBeatState.switchState(new StoryMenuState());
-						case 'freeplay':
-						MusicBeatState.switchState(new FreeplayState());
-						case 'credits':
-						MusicBeatState.switchState(new CreditsState());
-						case 'options':
-						LoadingState.loadAndSwitchState(new options.OptionsState());
+					case 'story_mode':
+						FlxG.mouse.visible = false;
+						FlxG.switchState(() -> new StoryMenuState());
+					case 'freeplay':
+						FlxG.mouse.visible = false;
+						FlxG.switchState(() -> new FreeplayState());
+					case 'credits':
+						FlxG.mouse.visible = false;
+						FlxG.switchState(() -> new CreditsState());
+					case 'options':
+						FlxG.mouse.visible = false;
+						FlxG.switchState(() -> new options.OptionsState());
 						OptionsState.onPlayState = false;
 						if (PlayState.SONG != null)
 						{
