@@ -156,9 +156,9 @@ class MainMenuState extends MusicBeatState
 					finishedFunnyMove = true;
 					changeItem();
 				}
-			});
-	    switch (i)
-
+			}
+					       
+	      switch (i)
 		    case 0:
 			menuItem.x= 50;
 
