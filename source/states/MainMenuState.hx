@@ -353,28 +353,24 @@ class MainMenuState extends MusicBeatState
 		lastBeatHit = curBeat;
 	}
 
-	function changeItem(huh:Int = 0, bool:Bool = true)
-	{
-		if (finishedFunnyMove) {
-			currentlySelected += huh;
+	function changeItem(huh:Int = 0) {
+		currentlySelected += huh;
 
-			if (currentlySelected >= menuItems.length)
-				currentlySelected = 0;
-			if (currentlySelected < 0)
-				currentlySelected = menuItems.length - 1;
-		}
+		if (currentlySelected >= menuItems.length)
+			currentlySelected = 0;
+		if (currentlySelected < 0)
+			currentlySelected = menuItems.length - 1;
 
-		menuItems.forEach(function(spr:FlxSprite)
-		{
+		menuItems.forEach(function(spr:FlxSprite) {
 			spr.animation.play('idle');
+			spr.offset.y = 0;
 			spr.updateHitbox();
 
-			if (spr.ID == currentlySelected && finishedFunnyMove)
-			{
+			if (spr.ID == currentlySelected) {
 				spr.animation.play('selected');
-				var add:Float = 0;
-				if(menuItems.length > 4) {
-					add = menuItems.length * 8;
+				spr.offset.x = 0.15 * (spr.frameWidth / 2 + 180);
+				spr.offset.y = 0.15 * spr.frameHeight;
+				FlxG.log.add(spr.frameWidth);
 				}
 				camFollow.setPosition(spr.getGraphicMidpoint().x, spr.getGraphicMidpoint().y - add);
 				spr.centerOffsets();
