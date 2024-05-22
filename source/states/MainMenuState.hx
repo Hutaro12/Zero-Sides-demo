@@ -29,11 +29,10 @@ class MainMenuState extends MusicBeatState
 	var secretText1:FlxText;
 	
 	var optionSelect:Array<String> = [
-		'story_mode',
-		'freeplay',
-		#if MODS_ALLOWED 'mods', #end
-		'credits',
-		'options'
+		'story_mode', //0
+		'freeplay', //1
+		'credits', //2
+		'options' //3
 	];
 
 	var camFollow:FlxObject;
@@ -149,10 +148,18 @@ class MainMenuState extends MusicBeatState
 			if(optionSelect.length < 6) scr = 0;
 			menuItem.antialiasing = ClientPrefs.data.antialiasing;
 			menuItem.updateHitbox();
-            if (firstStart)
-				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
+
+
+			switch (i)
+			    case 1;
+		              FlxTween.tween(menuItem, {x: 126}, 1 + (i * 0.25), {
 					ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
+				      
+            if (firstStart)
+				//FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
+					//ease: FlxEase.expoInOut,
+					//onComplete: function(flxTween:FlxTween)
 					{
 					finishedFunnyMove = true;
 					changeItem();
@@ -409,11 +416,6 @@ class MainMenuState extends MusicBeatState
 					case 'freeplay':
 						FlxG.mouse.visible = false;
 						FlxG.switchState(() -> new FreeplayState());
-					#if MODS_ALLOWED
-					case 'mods':
-						FlxG.mouse.visible = false;
-						FlxG.switchState(() -> new ModsMenuState());
-					#end
 					case 'credits':
 						FlxG.mouse.visible = false;
 						FlxG.switchState(() -> new CreditsState());
