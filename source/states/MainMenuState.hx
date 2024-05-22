@@ -132,62 +132,46 @@ class MainMenuState extends MusicBeatState
 
 		for (i in 0...optionSelect.length)
 		{
-			var offset:Float = 108 - (Math.max(optionSelect.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(FlxG.width * -1.5, (i * 140)  + offset);
-			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionSelect[i]);
-			menuItem.animation.addByPrefix('idle', optionSelect[i] + " basic", 12);
-			menuItem.animation.addByPrefix('selected', optionSelect[i] + " white", 12);
+			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
+			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
+			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
-			menuItem.scale.x = 0.7;
-			menuItem.scale.y = 0.7;
-			menuItem.scrollFactor.set(0, yScroll);
+			//menuItem.screenCenter(X);
 			menuItems.add(menuItem);
-			var scr:Float = (optionSelect.length - 4) * 0.135;
-			if(optionSelect.length < 6) scr = 0;
-			menuItem.antialiasing = ClientPrefs.data.antialiasing;
+			var scr:Float = (optionShit.length - 4) * 0.135;
+			if(optionShit.length < 6) scr = 0;
+			menuItem.scrollFactor.set(0, scr);
+			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
+			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
 			menuItem.updateHitbox();
+			menuItem.scale.set(0.8, 0.8);
 
 			
                         switch (i)
 			{
 			    case 0:
 				menuItem.y = 2;
-				menuItem.x= 104;
+				FlxTween.tween(menuItem, {x:104}, 2.4, {ease: FlxEase.expoInOut});
 
 			    case 1:
 				menuItem.y = 41;
-				menuItem.x= 102;
+				FlxTween.tween(menuItem, {x:102}, 2.4, {ease: FlxEase.expoInOut});
 
 			    case 2:
-				menuItem.y = 32.5;
-				menuItem.x= 100;
+				menuItem.y = 32;
+				FlxTween.tween(menuItem, {x:100}, 2.4, {ease: FlxEase.expoInOut});
 
 			    case 3:
 				menuItem.y = 34;
-				menuItem.x= 98;
-
-				
+				FlxTween.tween(menuItem, {x:98}, 2.4, {ease: FlxEase.expoInOut});
 			}
-
-
 			
-              if (firstStart)
-				FlxTween.tween(menuItem, {x: 104}, 1 + (i * 0.25), {
-			           	ease: FlxEase.expoInOut,
-				        onComplete: function(flxTween:FlxTween)
-					{
-					finishedFunnyMove = true;
-					changeItem();
-		           
-				}
-	                });
-			//else
-			//menuItem.x= 50;
-		}
-        firstStart = false;
+		}  
 
-		//FlxG.camera.follow(camFollow, null, 0);
+
+		FlxG.camera.flash(FlxColor.BLACK, 1.5);
+		
 
 		FlxTween.tween(mainSide, {x: -80}, 0.9, {ease: FlxEase.quartInOut});
 		FlxTween.tween(sbEngineLogo, {x: 725}, 0.9, {ease: FlxEase.quartInOut});
