@@ -353,7 +353,8 @@ class MainMenuState extends MusicBeatState
 		lastBeatHit = curBeat;
 	}
 
-	function changeItem(huh:Int = 0) {
+	function changeItem(huh:Int = 0)
+        {
 		currentlySelected += huh;
 
 		if (currentlySelected >= menuItems.length)
