@@ -148,30 +148,37 @@ class MainMenuState extends MusicBeatState
 			if(optionSelect.length < 6) scr = 0;
 			menuItem.antialiasing = ClientPrefs.data.antialiasing;
 			menuItem.updateHitbox();
-			
-                        switch (i)
+            if (firstStart)
+				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 2.4), {
+					ease: FlxEase.expoInOut,
+					onComplete: function(flxTween:FlxTween)
+					{
+					finishedFunnyMove = true;
+					changeItem();
+				}
+			});
+	
+			switch (i)
 			{
 			    case 0:
-				FlxTween.tween(menuItem, {x:116}, 2.4, {ease: FlxEase.expoInOut});
+				menuItem.x = 116;
 				menuItem.y = 2;
 
 			    case 1:
-				FlxTween.tween(menuItem, {x:124}, 2.4, {ease: FlxEase.expoInOut});
+				menuItem.x = 124;
 				menuItem.y = 41;
 
-			    case 2:
-				FlxTween.tween(menuItem, {x:130}, 2.4, {ease: FlxEase.expoInOut});
+                            case 0:
+				menuItem.x = 130;
 				menuItem.y = 31.3;
 
-			    case 3:
-				FlxTween.tween(menuItem, {x:136}, 2.4, {ease: FlxEase.expoInOut});
+			    case 1:
+				menuItem.x = 136;
 				menuItem.y = 34;
-
 					
-			}
-     			
+
 		}
-		
+        firstStart = false;
                 
                 //FlxG.camera.follow(camFollowPos, null, 1);
 
@@ -367,15 +374,14 @@ class MainMenuState extends MusicBeatState
 		menuItems.forEach(function(spr:FlxSprite)
 		{
 			spr.animation.play('idle');
-			spr.offset.y = 0;
 			spr.updateHitbox();
 
 			if (spr.ID == currentlySelected && finishedFunnyMove)
 			{
 				spr.animation.play('selected');
-				spr.offset.x = 0.15 * (spr.frameWidth / 2 + 180);
-				spr.offset.y = 0.15 * spr.frameHeight;
-				FlxG.log.add(spr.frameWidth);
+				var add:Float = 0;
+				if(menuItems.length > 4) {
+					add = menuItems.length * 8;
 				}
 				camFollow.setPosition(spr.getGraphicMidpoint().x, spr.getGraphicMidpoint().y - add);
 				spr.centerOffsets();
