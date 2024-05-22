@@ -166,7 +166,7 @@ class MainMenuState extends MusicBeatState
 			    case 3:
 				FlxTween.tween(menuItem, {x:136}, 2.4, {ease: FlxEase.expoInOut});
 				menuItem.y = 34;
-     			}
+     			
 			
 		} 
 
@@ -185,7 +185,7 @@ class MainMenuState extends MusicBeatState
 			//else
 			//menuItem.x= 50;
 		}
-        firstStart = true;
+        firstStart = false;
 		
                 
                 //FlxG.camera.follow(camFollowPos, null, 1);
