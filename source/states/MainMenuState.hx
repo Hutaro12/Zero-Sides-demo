@@ -184,7 +184,7 @@ class MainMenuState extends MusicBeatState
 			//else
 			//menuItem.x= 50;
 		}
-        firstStart = false;
+        //firstStart = false;
 
 
 		FlxG.camera.flash(FlxColor.BLACK, 1.5);
