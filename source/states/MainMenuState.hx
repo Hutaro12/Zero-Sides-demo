@@ -132,15 +132,13 @@ class MainMenuState extends MusicBeatState
 
 		for (i in 0...optionSelect.length)
 		{
-			var offset:Float = 108 - (Math.max(optionSelect.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(FlxG.width * -1.5, (i * 140)  + offset);
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionSelect[i]);
-			menuItem.animation.addByPrefix('idle', optionSelect[i] + " basic", 24);
-			menuItem.animation.addByPrefix('selected', optionSelect[i] + " white", 24);
+			menuItem.animation.addByPrefix('idle', optionSelect[i] + " basic", 12);
+			menuItem.animation.addByPrefix('selected', optionSelect[i] + " white", 12);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
-			menuItem.scale.x = 0.8;
-			menuItem.scale.y = 0.8;
+			menuItem.scale.x = 0.7;
+			menuItem.scale.y = 0.7;
 			menuItem.scrollFactor.set(0, yScroll);
 			FlxTween.tween(menuItem, {x: menuItem.width / 4 + (i * 60) - 75}, 1.3, {ease: FlxEase.sineInOut});
 			menuItems.add(menuItem);
@@ -154,21 +152,19 @@ class MainMenuState extends MusicBeatState
 			{
 			    case 0:
 				menuItem.y = 2;
-				FlxTween.tween(menuItem, {x:104}, 2.4, {ease: FlxEase.expoInOut});
+				FlxTween.tween(menuItem, {x:104}, 0.9, {ease: FlxEase.expoInOut});
 
 			    case 1:
 				menuItem.y = 41;
-				FlxTween.tween(menuItem, {x:102}, 2.4, {ease: FlxEase.expoInOut});
+				FlxTween.tween(menuItem, {x:100}, 0.9, {ease: FlxEase.expoInOut});
 
 			    case 2:
 				menuItem.y = 32;
-				FlxTween.tween(menuItem, {x:100}, 2.4, {ease: FlxEase.expoInOut});
+				FlxTween.tween(menuItem, {x:96}, 0.9, {ease: FlxEase.expoInOut});
 
 			    case 3:
 				menuItem.y = 34;
-				FlxTween.tween(menuItem, {x:98}, 2.4, {ease: FlxEase.expoInOut});
-
-
+				FlxTween.tween(menuItem, {x:92}, 0.9, {ease: FlxEase.expoInOut});
 			}
 			
 		}  
