@@ -175,7 +175,7 @@ class MainMenuState extends MusicBeatState
 
 
 		FlxG.camera.flash(FlxColor.BLACK, 1.5);
-		
+                {
 
 		FlxTween.tween(mainSide, {x: -80}, 0.9, {ease: FlxEase.quartInOut});
 		FlxTween.tween(sbEngineLogo, {x: 725}, 0.9, {ease: FlxEase.quartInOut});
