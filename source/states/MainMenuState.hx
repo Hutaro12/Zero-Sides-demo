@@ -353,7 +353,8 @@ class MainMenuState extends MusicBeatState
 		lastBeatHit = curBeat;
 	}
 
-	function changeItem(huh:Int = 0) {
+	function changeItem(huh:Int = 0, bool:Bool = true)
+        {
 		if (finishedFunnyMove) {
 			currentlySelected += huh;
 
@@ -366,14 +367,15 @@ class MainMenuState extends MusicBeatState
 		menuItems.forEach(function(spr:FlxSprite)
 		{
 			spr.animation.play('idle');
+			spr.offset.y = 0;
 			spr.updateHitbox();
 
 			if (spr.ID == currentlySelected && finishedFunnyMove)
 			{
 				spr.animation.play('selected');
-				var add:Float = 0;
-				if(menuItems.length > 4) {
-				add = menuItems.length * 8;
+				spr.offset.x = 0.15 * (spr.frameWidth / 2 + 180);
+				spr.offset.y = 0.15 * spr.frameHeight;
+				FlxG.log.add(spr.frameWidth);
 				}
 				camFollow.setPosition(spr.getGraphicMidpoint().x, spr.getGraphicMidpoint().y - add);
 				spr.centerOffsets();
@@ -436,15 +438,15 @@ class MainMenuState extends MusicBeatState
 		});
 	}
 
-	function backgroundColorClickChanger()
+	//function backgroundColorClickChanger()
 	{
-		if(clickCount > 5)
-			clickCount = 0;
+		//if(clickCount > 5)
+			//clickCount = 0;
 			
-		switch(clickCount)
+		//switch(clickCount)
 		{
-			case 0:
-				colorTag = FlxColor.BROWN;
+			//case 0:
+			/*	colorTag = FlxColor.BROWN;
 			case 1:
 				colorTag = FlxColor.ORANGE;
 			case 2:
@@ -454,7 +456,7 @@ class MainMenuState extends MusicBeatState
 			case 4:
 				colorTag = FlxColor.BROWN;
 			case 5:
-				colorTag = FlxColor.CYAN;
+				*///colorTag = FlxColor.CYAN;
 		}
 
 		FlxTween.color(menuBackground, 1.3, colorTag, 0xfffde871, {ease: FlxEase.sineInOut});
