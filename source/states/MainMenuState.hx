@@ -130,7 +130,8 @@ class MainMenuState extends MusicBeatState
 
 		var scale:Float = 1;
 
-		for (i in 0...optionSelect.length) {
+		for (i in 0...optionSelect.length)
+		{
 			var offset:Float = 108 - (Math.max(optionSelect.length, 4) - 4) * 80;
 			var menuItem:FlxSprite = new FlxSprite(0, (i * 140) + offset);
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionSelect[i]);
@@ -140,7 +141,7 @@ class MainMenuState extends MusicBeatState
 			menuItem.ID = i;
 			menuItem.scale.x = 0.7;
 			menuItem.scale.y = 0.7;
-			//menuItem.scrollFactor.set(0, yScroll);
+			menuItem.scrollFactor.set(0, yScroll);
 			//FlxTween.tween(menuItem, {x: menuItem.width / 4 + (i * 60) - 75}, 1.3, {ease: FlxEase.sineInOut});
 			menuItems.add(menuItem);
 			var scr:Float = (optionSelect.length - 4) * 0.135;
