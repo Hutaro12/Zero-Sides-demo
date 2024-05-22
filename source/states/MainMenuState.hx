@@ -142,30 +142,31 @@ class MainMenuState extends MusicBeatState
 			menuItem.scale.x = 0.7;
 			menuItem.scale.y = 0.7;
 			menuItem.scrollFactor.set(0, yScroll);
-			FlxTween.tween(menuItem, {x: menuItem.width / 4 + (i * 60) - 75}, 1.3, {ease: FlxEase.sineInOut});
+			//FlxTween.tween(menuItem, {x: menuItem.width / 4 + (i * 60) - 75}, 1.3, {ease: FlxEase.sineInOut});
 			menuItems.add(menuItem);
-			var scr:Float = (optionSelect.length - 4) * 0.135;
-			if(optionSelect.length < 6) scr = 0;
-			menuItem.antialiasing = ClientPrefs.data.antialiasing;
+			var scr:Float = (optionShit.length - 4) * 0.135;
+			if(optionShit.length < 6) scr = 0;
+			menuItem.scrollFactor.set(0, scr);
+			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
 			menuItem.updateHitbox();
 			
                         switch (i)
 			{
 			    case 0:
 				menuItem.y = 2;
-				FlxTween.tween(menuItem, {x:104}, 0.9, {ease: FlxEase.expoInOut});
+				FlxTween.tween(menuItem, {x:100}, 0.9, {ease: FlxEase.expoInOut});
 
 			    case 1:
 				menuItem.y = 41;
-				FlxTween.tween(menuItem, {x:100}, 0.9, {ease: FlxEase.expoInOut});
+				FlxTween.tween(menuItem, {x:104}, 0.9, {ease: FlxEase.expoInOut});
 
 			    case 2:
 				menuItem.y = 32;
-				FlxTween.tween(menuItem, {x:96}, 0.9, {ease: FlxEase.expoInOut});
+				FlxTween.tween(menuItem, {x:108}, 0.9, {ease: FlxEase.expoInOut});
 
 			    case 3:
 				menuItem.y = 34;
-				FlxTween.tween(menuItem, {x:92}, 0.9, {ease: FlxEase.expoInOut});
+				FlxTween.tween(menuItem, {x:112}, 0.9, {ease: FlxEase.expoInOut});
 			}
 			
 		}  
