@@ -157,25 +157,19 @@ class MainMenuState extends MusicBeatState
 					changeItem();
 				}
 			});
-	
-			switch (i)
-			{
-			    case 0:
-				menuItem.x = 116;
-				menuItem.y = 2;
+			else
 
-			    case 1:
-				menuItem.x = 124;
-				menuItem.y = 41;
+		    case 0:
+			menuItem.x= 50;
 
-                            case 0:
-				menuItem.x = 130;
-				menuItem.y = 31.3;
+		    case 1:
+			menuItem.x= 50;
 
-			    case 1:
-				menuItem.x = 136;
-				menuItem.y = 34;
-					
+		    case 2:
+			menuItem.x= 50;
+
+		    case 3:
+			menuItem.x= 50;
 
 		}
         firstStart = false;
