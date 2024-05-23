@@ -170,7 +170,7 @@ class MainMenuState extends MusicBeatState
 
 					
 			}
-		}
+		
 
 					
             if (firstStart)
