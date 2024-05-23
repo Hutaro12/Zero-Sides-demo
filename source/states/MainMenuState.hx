@@ -151,8 +151,8 @@ class MainMenuState extends MusicBeatState
 			if(optionSelect.length < 6) scr = 0;	
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
 			menuItem.updateHitbox();     
-		}
 
+		}
 		//FlxG.camera.follow(camFollow, null, 0);
 
 		FlxTween.tween(mainSide, {x: -80}, 0.9, {ease: FlxEase.quartInOut});
