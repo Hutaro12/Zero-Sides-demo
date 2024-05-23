@@ -29,11 +29,10 @@ class MainMenuState extends MusicBeatState
 	var secretText1:FlxText;
 	
 	var optionSelect:Array<String> = [
-		'story_mode',
-		'freeplay',
-		#if MODS_ALLOWED 'mods', #end
-		'credits',
-		'options'
+		'story_mode', // 0
+		'freeplay', // 1
+		'credits', // 2
+		'options' // 3
 	];
 
 	var camFollow:FlxObject;
@@ -136,8 +135,8 @@ class MainMenuState extends MusicBeatState
 			var offset:Float = 108 - (Math.max(optionSelect.length, 4) - 4) * 80;
 			var menuItem:FlxSprite = new FlxSprite(FlxG.width * -1.5, (i * 140)  + offset);
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionSelect[i]);
-			menuItem.animation.addByPrefix('idle', optionSelect[i] + " basic", 24);
-			menuItem.animation.addByPrefix('selected', optionSelect[i] + " white", 24);
+			menuItem.animation.addByPrefix('idle', optionSelect[i] + " basic", 12);
+			menuItem.animation.addByPrefix('selected', optionSelect[i] + " white", 12);
 			menuItem.animation.play('idle');
 			menuItem.ID = i;
 			menuItem.scale.x = 0.7;
@@ -149,19 +148,42 @@ class MainMenuState extends MusicBeatState
 			if(optionSelect.length < 6) scr = 0;
 			menuItem.antialiasing = ClientPrefs.data.antialiasing;
 			menuItem.updateHitbox();
-            if (firstStart)
-	    {
+
+			
+			switch (i)
+			{
+			    case 0:
+				FlxTween.tween(menuItem, {x:116}, 2.4, {ease: FlxEase.expoInOut});
+				menuItem.y = 2;
+
 			    case 1:
+				FlxTween.tween(menuItem, {x:124}, 2.4, {ease: FlxEase.expoInOut});
+				menuItem.y = 41;
+
+			    case 2:
+				FlxTween.tween(menuItem, {x:130}, 2.4, {ease: FlxEase.expoInOut});
+				menuItem.y = 31.3;
+
+			    case 3:
+				FlxTween.tween(menuItem, {x:136}, 2.4, {ease: FlxEase.expoInOut});
+				menuItem.y = 34;
+
+					
+			}
+		}
+
+					
+            if (firstStart)
 				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
-					ease: FlxEase.expoInOut,
+			          	ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
 					{
 					finishedFunnyMove = true;
 					changeItem();
 				}
 			});
-			else
-			menuItem.x= 50;
+			//else
+			//menuItem.x= 50;
 		}
         firstStart = false;
 
@@ -411,11 +433,6 @@ class MainMenuState extends MusicBeatState
 					case 'freeplay':
 						FlxG.mouse.visible = false;
 						FlxG.switchState(() -> new FreeplayState());
-					#if MODS_ALLOWED
-					case 'mods':
-						FlxG.mouse.visible = false;
-						FlxG.switchState(() -> new ModsMenuState());
-					#end
 					case 'credits':
 						FlxG.mouse.visible = false;
 						FlxG.switchState(() -> new CreditsState());
