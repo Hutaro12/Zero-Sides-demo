@@ -131,25 +131,41 @@ class MainMenuState extends MusicBeatState
 
 		var scale:Float = 1;
 
-		for (i in 0...optionShit.length)
+		for (i in 0...optionSelect.length)
 		{
 			var offset:Float = 108 - (Math.max(optionSelect.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(0, (i * 140) + offset);
-			menuItem.antialiasing = ClientPrefs.data.antialiasing;
+			var menuItem:FlxSprite = new FlxSprite(FlxG.width * -1.5, (i * 140)  + offset);
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionSelect[i]);
 			menuItem.animation.addByPrefix('idle', optionSelect[i] + " basic", 24);
 			menuItem.animation.addByPrefix('selected', optionSelect[i] + " white", 24);
 			menuItem.animation.play('idle');
+			menuItem.ID = i;
+			menuItem.scale.x = 0.7;
+			menuItem.scale.y = 0.7;
+			menuItem.scrollFactor.set(0, yScroll);
+			FlxTween.tween(menuItem, {x: menuItem.width / 4 + (i * 60) - 75}, 1.3, {ease: FlxEase.sineInOut});
 			menuItems.add(menuItem);
 			var scr:Float = (optionSelect.length - 4) * 0.135;
-			if (optionShit.length < 6)
-				scr = 0;
-			menuItem.scrollFactor.set(0, scr);
+			if(optionSelect.length < 6) scr = 0;
+			menuItem.antialiasing = ClientPrefs.data.antialiasing;
 			menuItem.updateHitbox();
-			menuItem.screenCenter(X);
+            if (firstStart)
+	    {
+			    case 1:
+				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
+					ease: FlxEase.expoInOut,
+					onComplete: function(flxTween:FlxTween)
+					{
+					finishedFunnyMove = true;
+					changeItem();
+				}
+			});
+			else
+			menuItem.x= 50;
 		}
-		
-		//FlxG.camera.follow(camFollow, null, 0);
+        firstStart = false;
+
+		FlxG.camera.follow(camFollow, null, 0);
 
 		FlxTween.tween(mainSide, {x: -80}, 0.9, {ease: FlxEase.quartInOut});
 		FlxTween.tween(sbEngineLogo, {x: 725}, 0.9, {ease: FlxEase.quartInOut});
@@ -209,6 +225,12 @@ class MainMenuState extends MusicBeatState
    		#end
 
 		super.create();
+	}
+
+	override function closeSubState() {
+		changeItem(0, false);
+		persistentUpdate = true;
+		super.closeSubState();
 	}
 
 	var selectedSomething:Bool = false;
@@ -436,4 +458,4 @@ class MainMenuState extends MusicBeatState
 		FlxTween.color(menuBackground, 1.3, colorTag, 0xfffde871, {ease: FlxEase.sineInOut});
 		clickCount++;	
 	}
-						   }
+}
