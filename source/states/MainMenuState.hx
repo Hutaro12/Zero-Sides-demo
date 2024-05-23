@@ -150,8 +150,6 @@ class MainMenuState extends MusicBeatState
 			menuItem.updateHitbox();
             if (firstStart)
 	    {
-		    switch (i)
-		    {
 			   case 1:
 				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
 					ease: FlxEase.expoInOut,
