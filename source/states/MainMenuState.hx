@@ -141,6 +141,7 @@ class MainMenuState extends MusicBeatState
 			menuItem.ID = i;
 			menuItem.scale.x = 0.7;
 			menuItem.scale.y = 0.7;
+			menuItem.x= 50;
 			menuItem.scrollFactor.set(0, yScroll);
 			FlxTween.tween(menuItem, {x: menuItem.width / 4 + (i * 60) - 75}, 1.3, {ease: FlxEase.sineInOut});
 			menuItems.add(menuItem);
@@ -148,23 +149,6 @@ class MainMenuState extends MusicBeatState
 			if(optionSelect.length < 6) scr = 0;
 			menuItem.antialiasing = ClientPrefs.data.antialiasing;
 			menuItem.updateHitbox();
-            if (firstStart)
-				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
-					ease: FlxEase.expoInOut,
-					onComplete: function(flxTween:FlxTween)
-					{
-					finishedFunnyMove = true;
-					changeItem();
-				}
-			});
-			else
-			{
-			switch (i)
-			       {
-				case 1:
-			           menuItem.x= 50;
-		}
-        firstStart = false;
 
 		FlxG.camera.follow(camFollow, null, 0);
 
