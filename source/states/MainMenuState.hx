@@ -144,7 +144,7 @@ class MainMenuState extends MusicBeatState
 			menuItem.scale.y = 0.7;
 			menuItem.x = 50;
 			menuItem.scrollFactor.set(0, yScroll);
-			FlxTween.tween(menuItem, {x: menuItem.width / 4 + (i * 60) - 75}, 1.3, {ease: FlxEase.sineInOut});
+			//FlxTween.tween(menuItem, {x: menuItem.width / 4 + (i * 60) - 75}, 1.3, {ease: FlxEase.sineInOut});
 			menuItems.add(menuItem);
 			var scr:Float = (optionSelect.length - 4) * 0.135;
 			if(optionSelect.length < 6) scr = 0;
