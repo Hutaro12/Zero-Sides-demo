@@ -153,9 +153,7 @@ class MainMenuState extends MusicBeatState
 			switch (i)
 			{
 			    case 0:
-				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
-			          	ease: FlxEase.expoInOut,
-					onComplete: function(flxTween:FlxTween)
+				FlxTween.tween(menuItem, {x:116}, 2.4, {ease: FlxEase.expoInOut});
 				menuItem.y = 2;
 
 			    case 1:
