@@ -29,10 +29,11 @@ class MainMenuState extends MusicBeatState
 	var secretText1:FlxText;
 	
 	var optionSelect:Array<String> = [
-		'story_mode', //0
-		'freeplay', //1
-		'credits', //2
-		'options' //3
+		'story_mode',
+		'freeplay',
+		#if MODS_ALLOWED 'mods', #end
+		'credits',
+		'options'
 	];
 
 	var camFollow:FlxObject;
@@ -141,16 +142,17 @@ class MainMenuState extends MusicBeatState
 			menuItem.ID = i;
 			menuItem.scale.x = 0.7;
 			menuItem.scale.y = 0.7;
-			menuItem.x= 50;
+			menuItem.x = 50;
 			menuItem.scrollFactor.set(0, yScroll);
 			FlxTween.tween(menuItem, {x: menuItem.width / 4 + (i * 60) - 75}, 1.3, {ease: FlxEase.sineInOut});
 			menuItems.add(menuItem);
 			var scr:Float = (optionSelect.length - 4) * 0.135;
 			if(optionSelect.length < 6) scr = 0;
 			menuItem.antialiasing = ClientPrefs.data.antialiasing;
-			menuItem.updateHitbox();
+			menuItem.updateHitbox();     
+		}
 
-		FlxG.camera.follow(camFollow, null, 0);
+		//FlxG.camera.follow(camFollow, null, 0);
 
 		FlxTween.tween(mainSide, {x: -80}, 0.9, {ease: FlxEase.quartInOut});
 		FlxTween.tween(sbEngineLogo, {x: 725}, 0.9, {ease: FlxEase.quartInOut});
@@ -396,6 +398,11 @@ class MainMenuState extends MusicBeatState
 					case 'freeplay':
 						FlxG.mouse.visible = false;
 						FlxG.switchState(() -> new FreeplayState());
+					#if MODS_ALLOWED
+					case 'mods':
+						FlxG.mouse.visible = false;
+						FlxG.switchState(() -> new ModsMenuState());
+					#end
 					case 'credits':
 						FlxG.mouse.visible = false;
 						FlxG.switchState(() -> new CreditsState());
@@ -438,4 +445,4 @@ class MainMenuState extends MusicBeatState
 		FlxTween.color(menuBackground, 1.3, colorTag, 0xfffde871, {ease: FlxEase.sineInOut});
 		clickCount++;	
 	}
-}
+						   }
