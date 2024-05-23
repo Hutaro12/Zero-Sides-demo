@@ -147,19 +147,12 @@ class MainMenuState extends MusicBeatState
 			var scr:Float = (optionSelect.length - 4) * 0.135;
 			if(optionSelect.length < 6) scr = 0;
 			menuItem.antialiasing = ClientPrefs.data.antialiasing;
-			menuItem.updateHitbox();
-
-
-			switch (i)
-			    case 1;
-		              FlxTween.tween(menuItem, {x: 126}, 1 + (i * 0.25), {
+			menuItem.updateHitbox();			      
+            if (firstStart)
+		           case 'story_mode':
+				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
 					ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
-				      
-            if (firstStart)
-				//FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
-					//ease: FlxEase.expoInOut,
-					//onComplete: function(flxTween:FlxTween)
 					{
 					finishedFunnyMove = true;
 					changeItem();
