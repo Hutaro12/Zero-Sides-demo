@@ -157,7 +157,7 @@ class MainMenuState extends MusicBeatState
 					changeItem();
 				}
 			});
-			else
+			case 1:
 			menuItem.x= 50;
 		}
         firstStart = false;
