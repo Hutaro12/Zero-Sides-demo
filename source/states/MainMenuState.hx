@@ -131,40 +131,23 @@ class MainMenuState extends MusicBeatState
 
 		var scale:Float = 1;
 
-		for (i in 0...optionSelect.length)
+		for (i in 0...optionShit.length)
 		{
-                        var offset:Float = 108 - (Math.max(optionSelect.length, 4) - 4) * 80;
+			var offset:Float = 108 - (Math.max(optionSelect.length, 4) - 4) * 80;
 			var menuItem:FlxSprite = new FlxSprite(0, (i * 140) + offset);
+			menuItem.antialiasing = ClientPrefs.data.antialiasing;
 			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionSelect[i]);
 			menuItem.animation.addByPrefix('idle', optionSelect[i] + " basic", 24);
 			menuItem.animation.addByPrefix('selected', optionSelect[i] + " white", 24);
 			menuItem.animation.play('idle');
-			menuItem.ID = i;
-			menuItem.screenCenter(X);
-			menuItem.x += 290;
-			menuItem.scale.x = 0.7;
-			menuItem.scale.y = 0.7;
-			menuItem.scrollFactor.set();
-			//FlxTween.tween(menuItem, {x: menuItem.width / 4 + (i * 60) - 75}, 1.3, {ease: FlxEase.sineInOut});
 			menuItems.add(menuItem);
 			var scr:Float = (optionSelect.length - 4) * 0.135;
-			if(optionSelect.length < 6) scr = 0;	
-			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-			menuItem.updateHitbox();  
-            //  if (firstStart)
-				//FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
-					//ease: FlxEase.expoInOut,
-					//onComplete: function(flxTween:FlxTween)
-					{
-					finishedFunnyMove = true;
-					changeItem();
-				}
-			});
-			else
-			menuItem.x= 50;
+			if (optionShit.length < 6)
+				scr = 0;
+			menuItem.scrollFactor.set(0, scr);
+			menuItem.updateHitbox();
+			menuItem.screenCenter(X);
 		}
-        firstStart = false;
-
 		
 		//FlxG.camera.follow(camFollow, null, 0);
 
