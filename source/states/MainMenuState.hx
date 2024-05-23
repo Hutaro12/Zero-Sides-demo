@@ -150,9 +150,22 @@ class MainMenuState extends MusicBeatState
 			var scr:Float = (optionSelect.length - 4) * 0.135;
 			if(optionSelect.length < 6) scr = 0;	
 			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-			menuItem.updateHitbox();     
-
+			menuItem.updateHitbox();  
+            //  if (firstStart)
+				//FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
+					//ease: FlxEase.expoInOut,
+					//onComplete: function(flxTween:FlxTween)
+					{
+					finishedFunnyMove = true;
+					changeItem();
+				}
+			});
+			else
+			menuItem.x= 50;
 		}
+        firstStart = false;
+
+		
 		//FlxG.camera.follow(camFollow, null, 0);
 
 		FlxTween.tween(mainSide, {x: -80}, 0.9, {ease: FlxEase.quartInOut});
