@@ -149,9 +149,9 @@ class MainMenuState extends MusicBeatState
 			menuItem.antialiasing = ClientPrefs.data.antialiasing;
 			menuItem.updateHitbox();	
 			
-            if (firstStart)
+            switch (firstStart)
 			 {
-		         case 'story_mode':
+		         case 1:
 				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
 					ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
@@ -160,8 +160,8 @@ class MainMenuState extends MusicBeatState
 					changeItem();
 				}
 			});
-			else
-			menuItem.x= 50;
+	                //else
+			//menuItem.x= 50;
 		}
         firstStart = false;
 
