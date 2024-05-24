@@ -180,6 +180,20 @@ class MainMenuState extends MusicBeatState
 			}
 		
 
+			//if (firstStart)
+				//FlxTween.tween(menuItem, {x: 50}, 1 + (i * 2.5), {
+			                //ease: FlxEase.expoInOut,
+			                //onComplete: function(flxTween:FlxTween)
+					{
+			                //finishedFunnyMove = true;
+			                //changeItem();
+				}
+			});
+			//else
+			//menuItem.x= 50;
+		}
+        firstStart = false;
+		
 					            
 		FlxG.camera.flash(FlxColor.BLACK, 1.5);
 
