@@ -158,6 +158,9 @@ class MainMenuState extends MusicBeatState
 					changeItem();
 				}
 			});
+			else
+			menuItem.x= 50; 
+				
 				menuItem.y = 2;
 
 			    case 1:
@@ -179,11 +182,11 @@ class MainMenuState extends MusicBeatState
 					
             if (firstStart)
 				//FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
-			          	//ease: FlxEase.expoInOut,
-					//onComplete: function(flxTween:FlxTween)
+			                //ease: FlxEase.expoInOut,
+			                //onComplete: function(flxTween:FlxTween)
 					{
-					finishedFunnyMove = true;
-					changeItem();
+			                //finishedFunnyMove = true;
+					//changeItem();
 				}
 			});
 			//else
@@ -191,7 +194,7 @@ class MainMenuState extends MusicBeatState
 		}
         firstStart = false;
 
-		FlxG.camera.follow(camFollow, null, 0);
+		//FlxG.camera.follow(camFollow, null, 0);
 
 		FlxTween.tween(mainSide, {x: -80}, 0.9, {ease: FlxEase.quartInOut});
 		FlxTween.tween(sbEngineLogo, {x: 725}, 0.9, {ease: FlxEase.quartInOut});
