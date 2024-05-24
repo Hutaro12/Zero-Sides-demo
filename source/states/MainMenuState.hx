@@ -184,15 +184,15 @@ class MainMenuState extends MusicBeatState
 				//FlxTween.tween(menuItem, {x: 50}, 1 + (i * 2.5), {
 			                //ease: FlxEase.expoInOut,
 			                //onComplete: function(flxTween:FlxTween)
-					{
+					//{
 			                //finishedFunnyMove = true;
 			                //changeItem();
-				}
-			});
+				//}
+			//});
 			//else
 			//menuItem.x= 50;
-		}
-        firstStart = false;
+                }
+        //firstStart = false;
 		
 					            
 		FlxG.camera.flash(FlxColor.BLACK, 1.5);
