@@ -153,21 +153,27 @@ class MainMenuState extends MusicBeatState
 			switch (i)
 			{
 			    case 0:
-				FlxTween.tween(menuItem, {x:100}, 2.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) {	
+				FlxTween.tween(menuItem, {x:90}, 2.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) {	
 			               }	
 			        });
 				menuItem.y = 2;
 
 			    case 1:
-				FlxTween.tween(menuItem, {x:124}, 2.4, {ease: FlxEase.expoInOut});
+				FlxTween.tween(menuItem, {x:114}, 2.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) {	
+			               }	
+			        });
 				menuItem.y = 41;
 
 			    case 2:
-				FlxTween.tween(menuItem, {x:130}, 2.4, {ease: FlxEase.expoInOut});
-				menuItem.y = 30.6;
+				FlxTween.tween(menuItem, {x:134}, 2.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) {	
+			               }	
+			        });
+				menuItem.y = 30.2;
 
 			    case 3:
-				FlxTween.tween(menuItem, {x:136}, 2.4, {ease: FlxEase.expoInOut});
+				FlxTween.tween(menuItem, {x:154}, 2.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) {	
+			               }	
+			        });
 				menuItem.y = 34;
 
 					
@@ -176,9 +182,9 @@ class MainMenuState extends MusicBeatState
 
 					
             if (firstStart)
-				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 2.5), {
-			                ease: FlxEase.expoInOut,
-			                onComplete: function(flxTween:FlxTween)
+				//FlxTween.tween(menuItem, {x: 50}, 1 + (i * 2.5), {
+			                //ease: FlxEase.expoInOut,
+			                //onComplete: function(flxTween:FlxTween)
 					{
 			                finishedFunnyMove = true;
 					changeItem();
@@ -188,6 +194,8 @@ class MainMenuState extends MusicBeatState
 			//menuItem.x= 50;
 		}
         firstStart = false;
+
+		FlxG.camera.flash(FlxColor.BLACK, 1.5);
 
 		//FlxG.camera.follow(camFollow, null, 0);
 
