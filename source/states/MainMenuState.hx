@@ -177,10 +177,10 @@ class MainMenuState extends MusicBeatState
 			        changeItem();
 			               }	
 			        });
-				menuItem.y = 29.5;
+				menuItem.y = 28.9;
 
 			    case 3:
-				FlxTween.tween(menuItem, {x:64}, 2.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
+				FlxTween.tween(menuItem, {x:104}, 2.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
 				{
 				finishedFunnyMove = true;
 			        changeItem();
@@ -190,23 +190,9 @@ class MainMenuState extends MusicBeatState
 
 					
 			}
+		}
 		
-
-			//if (firstStart)
-				//FlxTween.tween(menuItem, {x: 50}, 1 + (i * 2.5), {
-			                //ease: FlxEase.expoInOut,
-			                //onComplete: function(flxTween:FlxTween)
-					//{
-			                //finishedFunnyMove = true;
-			                //changeItem();
-				//}
-			//});
-			//else
-			//menuItem.x= 50;
-                }
-        //firstStart = false;
-		
-					            
+					           
 		FlxG.camera.flash(FlxColor.BLACK, 1.5);
 
 		//FlxG.camera.follow(camFollow, null, 0);
