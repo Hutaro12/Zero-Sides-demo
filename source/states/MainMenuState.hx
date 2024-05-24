@@ -153,19 +153,19 @@ class MainMenuState extends MusicBeatState
 			switch (i)
 			{
 			    case 0:
-				FlxTween.tween(menuItem, {x:116}, 2.4, {ease: FlxEase.expoInOut});
+				FlxTween.tween(menuItem, {x:100}, 2.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween), {finishedFunnyMove = true);
 				menuItem.y = 2;
 
 			    case 1:
-				FlxTween.tween(menuItem, {x:124}, 2.4, {ease: FlxEase.expoInOut});
+				FlxTween.tween(menuItem, {x:130}, 2.4, {ease: FlxEase.expoInOut});
 				menuItem.y = 41;
 
 			    case 2:
-				FlxTween.tween(menuItem, {x:130}, 2.4, {ease: FlxEase.expoInOut});
-				menuItem.y = 31.3;
+				FlxTween.tween(menuItem, {x:140}, 2.4, {ease: FlxEase.expoInOut});
+				menuItem.y = 30.5;
 
 			    case 3:
-				FlxTween.tween(menuItem, {x:136}, 2.4, {ease: FlxEase.expoInOut});
+				FlxTween.tween(menuItem, {x:150}, 2.4, {ease: FlxEase.expoInOut});
 				menuItem.y = 34;
 
 					
@@ -174,7 +174,7 @@ class MainMenuState extends MusicBeatState
 
 					
             if (firstStart)
-				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 0.25), {
+				FlxTween.tween(menuItem, {x: 50}, 1 + (i * 2.4), {
 			          	ease: FlxEase.expoInOut,
 					onComplete: function(flxTween:FlxTween)
 					{
