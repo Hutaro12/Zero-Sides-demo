@@ -181,7 +181,7 @@ class MainMenuState extends MusicBeatState
 		
 
 					
-            if (firstStart)
+            //if (firstStart)
 				//FlxTween.tween(menuItem, {x: 50}, 1 + (i * 2.5), {
 			                //ease: FlxEase.expoInOut,
 			                //onComplete: function(flxTween:FlxTween)
