@@ -436,10 +436,10 @@ class MainMenuState extends MusicBeatState
 		});
 	}
 	
-	//function backgroundColorClickChanger()
-	//{
-		//if(clickCount > 5)
-			//clickCount = 0;
+	function backgroundColorClickChanger()
+	{
+		if(clickCount > 5)
+			clickCount = 0;
 			
 		switch(clickCount)
 		{
