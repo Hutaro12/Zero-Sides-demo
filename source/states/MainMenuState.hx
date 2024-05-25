@@ -107,7 +107,7 @@ class MainMenuState extends MusicBeatState
 		mainSide.updateHitbox();
 		mainSide.screenCenter();
 		mainSide.antialiasing = ClientPrefs.data.antialiasing;
-		mainSide.x = 1000;
+		mainSide.x = 950;
 		mainSide.y = -90;
 		add(mainSide);
 
@@ -166,7 +166,7 @@ class MainMenuState extends MusicBeatState
 			        changeItem();
 			               }	
 			        });
-				menuItem.y = 14;
+				menuItem.y = 12;
 
 			    case 3:
 				FlxTween.tween(menuItem, {x:104}, 2.2, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
