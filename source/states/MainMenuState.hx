@@ -107,11 +107,11 @@ class MainMenuState extends MusicBeatState
 		mainSide.updateHitbox();
 		mainSide.screenCenter();
 		mainSide.antialiasing = ClientPrefs.data.antialiasing;
-		mainSide.x = -900;
+		mainSide.x = 1000;
 		mainSide.y = -90;
 		add(mainSide);
 
-		FlxTween.tween(mainSide, {x: -1000}, 2.2, {ease: FlxEase.quartInOut});
+		FlxTween.tween(mainSide, {x: 1000}, 2.2, {ease: FlxEase.quartInOut});
 		
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
@@ -166,7 +166,7 @@ class MainMenuState extends MusicBeatState
 			        changeItem();
 			               }	
 			        });
-				menuItem.y = 16;
+				menuItem.y = 14;
 
 			    case 3:
 				FlxTween.tween(menuItem, {x:104}, 2.2, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
