@@ -185,7 +185,6 @@ class MainMenuState extends MusicBeatState
 
 		//FlxG.camera.follow(camFollow, null, 0);
 
-		}, 0);
 		
 		versionSb = new FlxText(12, FlxG.height - 64, 0, "SB Engine v" + sbEngineVersion + " (Modified Psych Engine)" #if debug + " (Running currently on Debug build) " #end, 16);
 		versionPsych = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion #if debug + " (Running currently on Debug build) " #end, 16);
