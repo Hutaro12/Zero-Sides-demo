@@ -111,9 +111,7 @@ class MainMenuState extends MusicBeatState
 		mainSide.y = -90;
 		add(mainSide);
 
-		FlxTween.tween(mainSide, {x: -80}, 0.9, {ease: FlxEase.quartInOut});
-
-
+		FlxTween.tween(mainSide, {x: 80}, 0.9, {ease: FlxEase.quartInOut});
 		
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
@@ -168,7 +166,7 @@ class MainMenuState extends MusicBeatState
 			        changeItem();
 			               }	
 			        });
-				menuItem.y = 24;
+				menuItem.y = 23;
 
 			    case 3:
 				FlxTween.tween(menuItem, {x:104}, 1.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
@@ -187,7 +185,6 @@ class MainMenuState extends MusicBeatState
 		FlxG.camera.flash(FlxColor.BLACK, 1.5);
 
 		//FlxG.camera.follow(camFollow, null, 0);
-
 		
 		versionSb = new FlxText(12, FlxG.height - 64, 0, "SB Engine v" + sbEngineVersion + " (Modified Psych Engine)" #if debug + " (Running currently on Debug build) " #end, 16);
 		versionPsych = new FlxText(12, FlxG.height - 44, 0, "Psych Engine v" + psychEngineVersion #if debug + " (Running currently on Debug build) " #end, 16);
