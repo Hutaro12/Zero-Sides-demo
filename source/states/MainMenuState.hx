@@ -177,7 +177,7 @@ class MainMenuState extends MusicBeatState
 			        changeItem();
 			               }	
 			        });
-				menuItem.y = -42.2;
+				menuItem.y = -42.8;
 
 			    case 3:
 				FlxTween.tween(menuItem, {x:104}, 1.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
