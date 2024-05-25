@@ -111,7 +111,7 @@ class MainMenuState extends MusicBeatState
 		mainSide.y = -90;
 		add(mainSide);
 
-		FlxTween.tween(mainSide, {x: 80}, 0.9, {ease: FlxEase.quartInOut});
+		FlxTween.tween(mainSide, {x: 40}, 0.9, {ease: FlxEase.quartInOut});
 		
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
@@ -166,7 +166,7 @@ class MainMenuState extends MusicBeatState
 			        changeItem();
 			               }	
 			        });
-				menuItem.y = 23;
+				menuItem.y = 22;
 
 			    case 3:
 				FlxTween.tween(menuItem, {x:104}, 1.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
@@ -175,9 +175,7 @@ class MainMenuState extends MusicBeatState
 			        changeItem();
 			               }	
 			        });
-				menuItem.y = 34;
-
-					
+				menuItem.y = 34;			
 			}
 		}
 		
