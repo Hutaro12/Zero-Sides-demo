@@ -21,7 +21,6 @@ class MainMenuState extends MusicBeatState
 	var menuBackground:FlxSprite;
 	var background:FlxSprite;
 	var velocityBackground:FlxBackdrop;
-	var sbEngineLogo:FlxSprite;
 	var mainSide:FlxSprite;
 	var versionSb:FlxText;
 	var versionPsych:FlxText;
