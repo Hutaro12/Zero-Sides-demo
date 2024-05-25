@@ -108,22 +108,9 @@ class MainMenuState extends MusicBeatState
 		mainSide.updateHitbox();
 		mainSide.screenCenter();
 		mainSide.antialiasing = ClientPrefs.data.antialiasing;
-		mainSide.x = -500;
+		mainSide.x = 500;
 		mainSide.y = -90;
 		add(mainSide);
-
-		sbEngineLogo = new FlxSprite(0).loadGraphic(Paths.image('sbEngineLogo'));
-		sbEngineLogo.scrollFactor.x = 0;
-		sbEngineLogo.scrollFactor.y = 0;
-		sbEngineLogo.antialiasing = ClientPrefs.data.antialiasing;
-		sbEngineLogo.setGraphicSize(Std.int(menuBackground.width * 0.32));
-		sbEngineLogo.updateHitbox();
-		sbEngineLogo.screenCenter();
-		sbEngineLogo.x = 1000;
-		sbEngineLogo.y = 90;
-		sbEngineLogo.scale.x = 1;
-		sbEngineLogo.scale.y = 1;
-		add(sbEngineLogo);
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
 		add(menuItems);
@@ -177,7 +164,7 @@ class MainMenuState extends MusicBeatState
 			        changeItem();
 			               }	
 			        });
-				menuItem.y = -43.8;
+				menuItem.y = 24;
 
 			    case 3:
 				FlxTween.tween(menuItem, {x:104}, 1.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
@@ -198,13 +185,6 @@ class MainMenuState extends MusicBeatState
 		//FlxG.camera.follow(camFollow, null, 0);
 
 		FlxTween.tween(mainSide, {x: -80}, 0.9, {ease: FlxEase.quartInOut});
-		FlxTween.tween(sbEngineLogo, {x: 725}, 0.9, {ease: FlxEase.quartInOut});
-		FlxTween.angle(sbEngineLogo, sbEngineLogo.angle, -10, 2, {ease: FlxEase.quartInOut});
-		new FlxTimer().start(2, function(tmr:FlxTimer) {
-			if (sbEngineLogo.angle == -10)
-				FlxTween.angle(sbEngineLogo, sbEngineLogo.angle, 10, 2, {ease: FlxEase.quartInOut});
-			else
-				FlxTween.angle(sbEngineLogo, sbEngineLogo.angle, -10, 2, {ease: FlxEase.quartInOut});
 		}, 0);
 
 		versionSb = new FlxText(12, FlxG.height - 64, 0, "SB Engine v" + sbEngineVersion + " (Modified Psych Engine)" #if debug + " (Running currently on Debug build) " #end, 16);
@@ -416,13 +396,11 @@ class MainMenuState extends MusicBeatState
 				if (currentlySelected == spr.ID)
 				{
 					FlxTween.tween(spr, {y : 700}, 1.5, {ease: FlxEase.sineInOut,});	
-					FlxTween.tween(mainSide, {x:  -700}, 0.45, {ease: FlxEase.sineInOut, type: ONESHOT, startDelay: 0});
-					FlxTween.tween(sbEngineLogo, {x:  1500}, 0.45, {ease: FlxEase.sineInOut, type: ONESHOT, startDelay: 0});				
+					FlxTween.tween(mainSide, {x:  -700}, 0.45, {ease: FlxEase.sineInOut, type: ONESHOT, startDelay: 0});				
 				}
 				if (currentlySelected != spr.ID)
 				{
 					FlxTween.tween(spr, {alpha: 0}, 0.4, {ease: FlxEase.sineInOut,});
-					FlxTween.tween(sbEngineLogo, {alpha: 0}, 0.4, {ease: FlxEase.sineInOut,});
 					FlxTween.tween(mainSide, {alpha: 0}, 0.4, {ease: FlxEase.sineInOut,});
 					FlxTween.tween(spr, {x : -500}, 0.55, {ease: FlxEase.sineInOut, onComplete: function(twn:FlxTween)
 					{
@@ -459,10 +437,10 @@ class MainMenuState extends MusicBeatState
 		});
 	}
 	
-	function backgroundColorClickChanger()
-	{
-		if(clickCount > 5)
-			clickCount = 0;
+	//function backgroundColorClickChanger()
+	//{
+		//if(clickCount > 5)
+			//clickCount = 0;
 			
 		switch(clickCount)
 		{
