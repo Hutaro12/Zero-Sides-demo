@@ -111,7 +111,7 @@ class MainMenuState extends MusicBeatState
 		mainSide.y = -90;
 		add(mainSide);
 
-		FlxTween.tween(mainSide, {x: 40}, 0.9, {ease: FlxEase.quartInOut});
+		FlxTween.tween(mainSide, {x: -200}, 2.2, {ease: FlxEase.quartInOut});
 		
 
 		menuItems = new FlxTypedGroup<FlxSprite>();
@@ -142,7 +142,7 @@ class MainMenuState extends MusicBeatState
 			switch (i)
 			{
 			    case 0:
-				FlxTween.tween(menuItem, {x:164}, 1.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
+				FlxTween.tween(menuItem, {x:164}, 2.2, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
 				{
 				finishedFunnyMove = true;
 			        changeItem();
@@ -151,7 +151,7 @@ class MainMenuState extends MusicBeatState
 				menuItem.y = 2;
 
 			    case 1:
-				FlxTween.tween(menuItem, {x:134}, 1.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
+				FlxTween.tween(menuItem, {x:134}, 2.2, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
 				{
 				finishedFunnyMove = true;
 			        changeItem();
@@ -160,16 +160,16 @@ class MainMenuState extends MusicBeatState
 				menuItem.y = 41;
 
 			    case 2:
-				FlxTween.tween(menuItem, {x:114}, 1.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
+				FlxTween.tween(menuItem, {x:114}, 2.2, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
 				{
 				finishedFunnyMove = true;
 			        changeItem();
 			               }	
 			        });
-				menuItem.y = 21;
+				menuItem.y = 18;
 
 			    case 3:
-				FlxTween.tween(menuItem, {x:104}, 1.4, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
+				FlxTween.tween(menuItem, {x:104}, 2.2, {ease: FlxEase.expoInOut, onComplete: function(flxTween:FlxTween) 
 				{
 				finishedFunnyMove = true;
 			        changeItem();
