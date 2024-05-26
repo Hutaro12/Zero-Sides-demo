@@ -107,6 +107,8 @@ class MainMenuState extends MusicBeatState
 		zerobf.animation.addByPrefix('idle',"idle",12);	
 		zerobf.animation.play('idle');
 		zerobf.scrollFactor.set(0, 0.1);
+		zerobf.scale.x = 0.9;
+		zerobf.scale.y = 0.9;
 		zerobf.x = 500;
 		zerobf.screenCenter(Y);
 		add(zerobf);
@@ -409,7 +411,8 @@ class MainMenuState extends MusicBeatState
 				if (currentlySelected == spr.ID)
 				{
 					FlxTween.tween(spr, {y : 700}, 1.5, {ease: FlxEase.sineInOut,});	
-					FlxTween.tween(mainSide, {x:  -700}, 0.45, {ease: FlxEase.sineInOut, type: ONESHOT, startDelay: 0});				
+					FlxTween.tween(mainSide, {x:  1500}, 2.2, {ease: FlxEase.sineInOut, type: ONESHOT, startDelay: 0});
+					FlxTween.tween(zerobf, {x:  -700}, 2.2, {ease: FlxEase.sineInOut, type: ONESHOT, startDelay: 0});
 				}
 				if (currentlySelected != spr.ID)
 				{
