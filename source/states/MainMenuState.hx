@@ -22,6 +22,7 @@ class MainMenuState extends MusicBeatState
 	var background:FlxSprite;
 	var velocityBackground:FlxBackdrop;
 	var zerobf:FlxSprite;
+	var zerogf:FlxSprite;
 	var mainSide:FlxSprite;
 	var versionSb:FlxText;
 	var versionPsych:FlxText;
@@ -101,6 +102,20 @@ class MainMenuState extends MusicBeatState
 		velocityBackground.scrollFactor.y = 0;
 		add(velocityBackground);
 
+		zerogf = new FlxSprite();
+		zerogf.frames = Paths.getSparrowAtlas('menu_GFZ');
+		zerogf.antialiasing = ClientPrefs.data.antialiasing;
+		zerogf.animation.addByPrefix('idle',"idle",12);	
+		zerogf.animation.play('idle');
+		zerogf.scrollFactor.set(0, 0.1);
+		zerogf.scale.x = 0.9;
+		zerogf.scale.y = 0.9;
+		zerogf.x = -500;
+		zerogf.screenCenter(Y);
+		add(zerogf);
+
+		FlxTween.tween(zerogf, {x:-90}, 2.4, {ease: FlxEase.expoInOut});
+
 		zerobf = new FlxSprite();
 		zerobf.frames = Paths.getSparrowAtlas('menu_BFZ');
 		zerobf.antialiasing = ClientPrefs.data.antialiasing;
@@ -109,7 +124,7 @@ class MainMenuState extends MusicBeatState
 		zerobf.scrollFactor.set(0, 0.1);
 		zerobf.scale.x = 0.9;
 		zerobf.scale.y = 0.9;
-		zerobf.x = 500;
+		zerobf.x = -500;
 		zerobf.screenCenter(Y);
 		add(zerobf);
 
@@ -413,6 +428,7 @@ class MainMenuState extends MusicBeatState
 					FlxTween.tween(spr, {y : 700}, 1.5, {ease: FlxEase.sineInOut,});	
 					FlxTween.tween(mainSide, {x:  1500}, 2.2, {ease: FlxEase.sineInOut, type: ONESHOT, startDelay: 0});
 					FlxTween.tween(zerobf, {x:  -700}, 2.2, {ease: FlxEase.sineInOut, type: ONESHOT, startDelay: 0});
+					FlxTween.tween(zerogf, {x:  -700}, 2.2, {ease: FlxEase.sineInOut, type: ONESHOT, startDelay: 0});
 				}
 				if (currentlySelected != spr.ID)
 				{
