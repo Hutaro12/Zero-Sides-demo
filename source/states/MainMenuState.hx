@@ -21,6 +21,7 @@ class MainMenuState extends MusicBeatState
 	var menuBackground:FlxSprite;
 	var background:FlxSprite;
 	var velocityBackground:FlxBackdrop;
+	var zerobf:FlxSprite;
 	var mainSide:FlxSprite;
 	var versionSb:FlxText;
 	var versionPsych:FlxText;
@@ -100,7 +101,7 @@ class MainMenuState extends MusicBeatState
 		velocityBackground.scrollFactor.y = 0;
 		add(velocityBackground);
 
-		zerobf = new FlxSprite(0).loadGraphic(Paths.image('menu_BFZ'));
+		zerobf = new FlxSprite();
 		zerobf.frames = Paths.getSparrowAtlas('menu_BFZ');
 		zerobf.antialiasing = ClientPrefs.data.antialiasing;
 		zerobf.animation.addByPrefix('idle',"idle",12);	
