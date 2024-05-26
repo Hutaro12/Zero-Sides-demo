@@ -100,6 +100,19 @@ class MainMenuState extends MusicBeatState
 		velocityBackground.scrollFactor.y = 0;
 		add(velocityBackground);
 
+		zerobf = new FlxSprite();
+		zerobf.frames = Paths.getSparrowAtlas('menu_BFZ');
+		zerobf.antialiasing = ClientPrefs.globalAntialiasing;
+		zerobf.animation.addByPrefix('idle',"idle",12);	
+		zerobf.animation.play('idle');
+		zerobf.scrollFactor.x = 0;
+		zerobf.scrollFactor.y = 0;
+		zerobf.x = 500;
+		zerobf.screenCenter(Y);
+		add(zerobf);
+
+		FlxTween.tween(zerobf, {x:-80}, 2.4, {ease: FlxEase.expoInOut});
+
 		mainSide = new FlxSprite(0).loadGraphic(Paths.image('mainSide'));
 		mainSide.scrollFactor.x = 0;
 		mainSide.scrollFactor.y = 0;
@@ -458,7 +471,7 @@ class MainMenuState extends MusicBeatState
 				colorTag = FlxColor.CYAN;
 		}
 
-		FlxTween.color(menuBackground, 1.3, colorTag, 0xfffde871, {ease: FlxEase.sineInOut});
+		FlxTween.color(menuBackground, 1.3, colorTag, 0xFFea71fd, {ease: FlxEase.sineInOut});
 		clickCount++;	
 	}
 }
