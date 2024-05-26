@@ -102,11 +102,10 @@ class MainMenuState extends MusicBeatState
 
 		zerobf = new FlxSprite();
 		zerobf.frames = Paths.getSparrowAtlas('menu_BFZ');
-		zerobf.antialiasing = ClientPrefs.globalAntialiasing;
+		zerobf.antialiasing = ClientPrefs.data.antialiasing;
 		zerobf.animation.addByPrefix('idle',"idle",12);	
 		zerobf.animation.play('idle');
-		zerobf.scrollFactor.x = 0;
-		zerobf.scrollFactor.y = 0;
+		zerobf.scrollFactor.set(0, 0.1);
 		zerobf.x = 500;
 		zerobf.screenCenter(Y);
 		add(zerobf);
