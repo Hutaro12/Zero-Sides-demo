@@ -1,6 +1,6 @@
 package objects;
 
-import backend.animation.PsychAnimationController;
+import import animateatlas.AtlasFrameMaker;
 
 import flixel.util.FlxSort;
 import flixel.util.FlxDestroyUtil;
