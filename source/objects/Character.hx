@@ -306,7 +306,7 @@ class Character extends FlxSprite
 	{
 		var name:String = '';
 		@:privateAccess
-		if(!isAnimationNull()) name = #if flxanimate !isAnimateAtlas ? #end animation.curAnim.name #if flxanimate : atlas.anim.lastPlayedAnim #end;
+		//if(!isAnimationNull()) name = #if flxanimate !isAnimateAtlas ? #end animation.curAnim.name #if flxanimate : atlas.anim.lastPlayedAnim #end;
 		return (name != null) ? name : '';
 	}
 
@@ -338,7 +338,7 @@ class Character extends FlxSprite
 		else
 		{
 			if(value) atlas.anim.pause();
-			else atlas.anim.resume();
+			//else atlas.anim.resume();
 		} 
 		#end
 
